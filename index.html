@@ -1,0 +1,55 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <h1 id="h1">H1</h1>
+        <p id="idee">ID = id1</p>
+        <div id="zan">
+        	<h1>Żaneta</h1>
+        	<p>Żaneta jest piękną i mądrą kobietą.</p>
+        </div>
+        <ul class='list'>
+        	<li id='1'>1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        	<li>5</li>
+        </ul>
+        <div id='panel1'>
+        	panel1
+        </div>
+        <div class='sidebyside'>
+        	<button id='btn1'>#btn1</button>
+        	<button id='btn2'>#btn2</button>
+        	<button id='btn3'>#btn3</button>
+        	<button id='btn4'>#btn4</button>
+        </div>
+    </body>
+</html>
+
+
+<script src="components\jquery\jquery.js"></script>
+<script>
+	$(function(){
+		$('#idee').css({
+			color:'red'
+		});  <!--select the tag by id -->
+		$('#h1').toggle(500).toggle(1000)
+		$('.list').css({
+			color:'blue'
+		});
+		$('#panel1').html('my panel <strong>my bold</strong>');
+		$('#btn1').on('click',function() {
+			$('h1').toggle(200);
+		});
+	});
+</script>

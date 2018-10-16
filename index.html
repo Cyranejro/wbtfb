@@ -11,7 +11,8 @@
     <body>
 
         <p>Hello world! This is HTML5 Boilerplate.</p>
-        <h1 id="h1">H1</h1>
+        <h1 id="h1">H1 H1 H1</h1>
+        <h2>h2 też coś</h2>
         <p id="idee">ID = id1</p>
         <div id="zan">
         	<h1>Żaneta</h1>
@@ -24,14 +25,25 @@
         	<li>4</li>
         	<li>5</li>
         </ul>
-        <div id='panel1'>
-        	panel1
+        <div>
+            <div id='panel1' class='horizontal'>
+            	panel1
+            </div>
+            <div id='panel2' class='horizontal'>
+                panel2
+            </div>
+            <div id='panel3' class='horizontal'>
+                panel3
+            </div>
+            <div id='panel4' class='horizontal'>
+                panel4
+            </div>
         </div>
         <div class='sidebyside'>
-        	<button id='btn1'>#btn1</button>
-        	<button id='btn2'>#btn2</button>
-        	<button id='btn3'>#btn3</button>
-        	<button id='btn4'>#btn4</button>
+        	<button id='btn1' class='panel-btn' data-panelid='panel1'>#btn1</button>
+        	<button id='btn2' class='panel-btn' data-panelid='panel2'>#btn2</button>
+        	<button id='btn3' class='panel-btn' data-panelid='panel3'>#btn3</button>
+        	<button id='btn4' class='panel-btn' data-panelid='panel4'>#btn4</button>
         </div>
     </body>
 </html>
@@ -40,7 +52,8 @@
 <script src="components\jquery\jquery.js"></script>
 <script>
 	$(function(){
-		$('#idee').css({
+/*
+        $('#idee').css({
 			color:'red'
 		});  <!--select the tag by id -->
 		$('#h1').toggle(500).toggle(1000)
@@ -48,8 +61,16 @@
 			color:'blue'
 		});
 		$('#panel1').html('my panel <strong>my bold</strong>');
-		$('#btn1').on('click',function() {
+		$('#btn1').on('click', function() {
 			$('h1').toggle(200);
 		});
+        $('p').on('mouseover', function() {
+            $('p').first().toggle(1000);
+        });
+*/
+        $('.panel-btn').on('click', function() {
+            var panelId = $(this).attr('data-panelid');
+            $('#' + panelId).toggle(10);
+        });
 	});
 </script>
